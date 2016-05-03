@@ -1,5 +1,3 @@
-import java.io.BufferedInputStream;
-import java.io.InputStream;
 import java.util.Scanner;
 
 public class CalcInterface {
@@ -18,10 +16,10 @@ public class CalcInterface {
 		char opr;
 
 		Scanner input = new Scanner(System.in);
-		opr = (char)input.next();
+		opr = input.next(".").charAt(0);
 		input.close();
 
-		return opn;
+		return opr;
 	}
 
 	public void mostraResultado(double res) {
