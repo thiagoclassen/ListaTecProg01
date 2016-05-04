@@ -9,15 +9,19 @@ public class CalcControle {
 	}
 
 	public void executar() {
+		
+		double resultado;
+		
+		calcDados.setOperando(1, calcInterface.recebeOperando(1));
+
 		do {
-			
-			calcDados.setOperando(1, calcInterface.recebeOperando(1));
 			calcDados.setOperando(2, calcInterface.recebeOperando(2));
 
 			calcDados.setOperacao(calcInterface.recebeOperacao());
 
-			calcInterface.mostraResultado(
-					operar(calcDados.getOperando(1), calcDados.getOperando(2), calcDados.getOperacao()));
+			resultado = operar(calcDados.getOperando(1), calcDados.getOperando(2), calcDados.getOperacao());
+			calcInterface.mostraResultado(resultado);
+			calcDados.setOperando(1, resultado);
 		} while (true);
 	}
 
