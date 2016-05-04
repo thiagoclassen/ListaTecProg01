@@ -1,4 +1,3 @@
-
 public class CalcControle {
 
 	private CalcDados calcDados;
@@ -10,12 +9,16 @@ public class CalcControle {
 	}
 
 	public void executar() {
-		calcDados.setOperando(1, calcInterface.recebeOperando(1));
-		calcDados.setOperando(2, calcInterface.recebeOperando(2));
-		calcDados.setOperacao(calcInterface.recebeOperacao());
+		do {
+			
+			calcDados.setOperando(1, calcInterface.recebeOperando(1));
+			calcDados.setOperando(2, calcInterface.recebeOperando(2));
 
-		calcInterface
-				.mostraResultado(operar(calcDados.getOperando(1), calcDados.getOperando(2), calcDados.getOperacao()));
+			calcDados.setOperacao(calcInterface.recebeOperacao());
+
+			calcInterface.mostraResultado(
+					operar(calcDados.getOperando(1), calcDados.getOperando(2), calcDados.getOperacao()));
+		} while (true);
 	}
 
 	public double operar(double opn1, double opn2, char op) {

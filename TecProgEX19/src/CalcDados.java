@@ -26,9 +26,6 @@ public class CalcDados {
 	}
 
 	public void setOperacao(char op) {
-		if (op == 's') {
-			System.exit(0);
-		}
 		this.op = op;
 	}
 
